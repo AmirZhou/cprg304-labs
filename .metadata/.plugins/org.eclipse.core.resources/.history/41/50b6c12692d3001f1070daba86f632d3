@@ -1,0 +1,38 @@
+package model;
+
+public abstract class Appliance {
+	private String itemNumber;
+	private String brand;
+	private int quantity;
+	private int wattage;
+	private String color;
+	private double price;
+	
+	public String itemNumber()
+	{
+		return itemNumber;
+	};
+	
+	public String brand()
+	{
+		return brand;
+	};
+	public int quantity()
+	{
+		return quantity;
+	};
+	public int wattage()
+	{
+		return wattage;
+	};
+	public String color()
+	{
+		return color;
+	};
+	public double price()
+	{
+		return price;
+	};
+	
+	String toString();
+}

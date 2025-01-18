@@ -1,0 +1,55 @@
+package model;
+
+public class Refrigerator implements Appliance {
+	
+	private String itemNumber;
+	private String brand;
+	private int quantity;
+	private int wattage;
+	private String color;
+	private double price;
+	
+	private Refrigerator(Builder builder) {
+	
+	}
+	
+	public static class Builder {
+		public 
+	}
+	@Override
+	public String itemNumber() {
+		// TODO Auto-generated method stub
+		return itemNumber;
+	}
+
+	@Override
+	public String brand() {
+		// TODO Auto-generated method stub
+		return brand;
+	}
+
+	@Override
+	public int quantity() {
+		// TODO Auto-generated method stub
+		return quantity;
+	}
+
+	@Override
+	public int wattage() {
+		// TODO Auto-generated method stub
+		return wattage;
+	}
+
+	@Override
+	public String color() {
+		// TODO Auto-generated method stub
+		return color;
+	}
+
+	@Override
+	public double price() {
+		// TODO Auto-generated method stub
+		return price;
+	}
+	
+}
