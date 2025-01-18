@@ -18,7 +18,9 @@ public abstract class Appliance {
 		this.quantity = builder.quantity;
 	}
 	
- 	public abstract static class Builder<T extends Builder<T>> 
+	
+	
+ A	public static class Builder<T extends Builder<T>> 
 	{
 		private String itemNumber;
         private String brand;
@@ -27,10 +29,24 @@ public abstract class Appliance {
         private int quantity;
         private double price;
         
-        public abstract Appliance build();
+        public Appliance build()
+    	{
+    		return new Appliance(this) 
+    		{
+    			@Override
+                public String toString() {
+                    return "Appliance{" +
+                           "itemNumber='" + itemNumber + '\'' +
+                           ", brand='" + brand + '\'' +
+                           ", wattage=" + wattage +
+                           ", color='" + color + '\'' +
+                           ", quantity=" + quantity +
+                           ", price=" + price +
+                           '}';
+    		};
+    	}
         
-        @SuppressWarnings("unchecked")
-        protected T self()
+        protected  T self()
         {
         	return (T) this;
         }

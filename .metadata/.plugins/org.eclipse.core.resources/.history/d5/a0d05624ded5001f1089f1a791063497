@@ -3,17 +3,17 @@ package model;
 public class Refrigerator extends Appliance {
 	
 	private final int numberOfDoors;
-	public int numberOfDoors() {
+	public int getNumberOfDoors() {
 		return numberOfDoors;
 	}
 	
 	private final double height;
-	public double height() {
+	public double getHeight() {
 		return height;
 	}
 	
 	private final double width;
-    public double width() {
+    public double getWidth() {
         return width;
     }
     
@@ -31,8 +31,7 @@ public class Refrigerator extends Appliance {
 		private double height;
 		private double width;
 		
-		public Refrigerator build() 
-		{
+		public Refrigerator build() {
             return new Refrigerator(this);
         }
 		

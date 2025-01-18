@@ -18,7 +18,7 @@ public abstract class Appliance {
 		this.quantity = builder.quantity;
 	}
 	
- 	public abstract static class Builder<T extends Builder<T>> 
+	public static class Builder<T extends Builder<T>> 
 	{
 		private String itemNumber;
         private String brand;
@@ -27,10 +27,7 @@ public abstract class Appliance {
         private int quantity;
         private double price;
         
-        public abstract Appliance build();
-        
-        @SuppressWarnings("unchecked")
-        protected T self()
+        protected  T self()
         {
         	return (T) this;
         }
