@@ -31,13 +31,11 @@ public class Vaccum extends Appliance{
 		
 		public Builder grade(String grade)
 		{
-			this.grade = grade;
 			return self();
 		}
 		
 		public Builder batteryVotage(int batteryVotage)
 		{
-			this.batteryVotage = batteryVotage;
 			return self();
 		}
 	}

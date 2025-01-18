@@ -1,0 +1,25 @@
+package model;
+
+public class Microwave extends Appliance {
+	private final double capacity;
+	private final String roomType;
+	
+	public String roomType()
+	{
+		return this.roomType;
+	}
+	
+	public double capacity()
+	{
+		return this.capacity;
+	}
+	
+	private Microwave(Builder builder)
+	{
+		super(builder);
+		this.capacity = builder.capacity;
+		this.roomType = builder.roomType;
+	}
+	
+	
+}
