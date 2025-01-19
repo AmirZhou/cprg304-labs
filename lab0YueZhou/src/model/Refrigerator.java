@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Map;
+
 public class Refrigerator extends Appliance {
 	
 	private final int numberOfDoors;
@@ -17,8 +19,7 @@ public class Refrigerator extends Appliance {
         return width;
     }
     
-	private Refrigerator(Builder builder)
-	{
+	private Refrigerator(Builder builder) {
 		super(builder);
 		this.numberOfDoors = builder.numberOfDoors;
 		this.height = builder.height;
@@ -53,11 +54,19 @@ public class Refrigerator extends Appliance {
 			this.width = width;
 			return self();
 		}
-
 	}
 	
+	@Override
+    public boolean matchesCriteria(Map<String, Object> criteria) {
+		if (criteria.containsKey("numberOfDoors")) {
+            int doors = (int) criteria.get("numberOfDoors");
+            if (this.numberOfDoors != doors) {
+                return false;
+            }
+        }
+		return true;
+	}
 	
-    
     @Override
     public String toString() {
         return "Refrigerator{" +

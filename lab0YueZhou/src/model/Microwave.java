@@ -1,6 +1,9 @@
 package model;
 
-public class Microwave extends Appliance {
+import java.util.Map;
+
+public class Microwave extends Appliance 
+{
 	private final double capacity;
 	public double capacity()
 	{
@@ -20,7 +23,8 @@ public class Microwave extends Appliance {
 		this.roomType = builder.roomType;
 	}
 	
-	public static class Builder extends Appliance.Builder<Builder> {
+	public static class Builder extends Appliance.Builder<Builder> 
+	{
 		private double capacity;
 		private String roomType;
 		
@@ -40,6 +44,17 @@ public class Microwave extends Appliance {
 			this.roomType = roomType;
 			return self();
 		}
+	}
+	
+	@Override
+    public boolean matchesCriteria(Map<String, Object> criteria) {
+		if (criteria.containsKey("roomType")) {
+            String roomType = (String) criteria.get("roomType");
+            if (this.roomType != roomType) {
+                return false;
+            }
+        }
+		return true;
 	}
 	
 	@Override

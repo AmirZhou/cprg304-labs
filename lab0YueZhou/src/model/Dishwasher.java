@@ -1,6 +1,9 @@
 package model;
 
-public class Dishwasher extends Appliance {
+import java.util.Map;
+
+public class Dishwasher extends Appliance 
+{
 	private final String feature;
 	private final String soundRating;
 	
@@ -21,7 +24,8 @@ public class Dishwasher extends Appliance {
 		this.soundRating = builder.soundRating;
 	}
 	
-	public static class Builder extends Appliance.Builder<Builder> {
+	public static class Builder extends Appliance.Builder<Builder> 
+	{
 		private String feature;
 		private String soundRating;
 		
@@ -41,6 +45,17 @@ public class Dishwasher extends Appliance {
 			this.soundRating = soundRating;
 			return self();
 		}
+	}
+	
+	@Override
+    public boolean matchesCriteria(Map<String, Object> criteria) {
+		if (criteria.containsKey("soundRating")) {
+            String soundRating = (String) criteria.get("soundRating");
+            if (this.soundRating != soundRating) {
+                return false;
+            }
+        }
+		return true;
 	}
 	
 	@Override

@@ -1,6 +1,9 @@
 package model;
 
-public class Vaccum extends Appliance{
+import java.util.Map;
+
+public class Vaccum extends Appliance
+{
 	private final String grade;
 	public String grade()
 	{
@@ -20,7 +23,8 @@ public class Vaccum extends Appliance{
 		this.batteryVotage = builder.batteryVotage;
 	}
 	
-	public static class Builder extends Appliance.Builder<Builder> {
+	public static class Builder extends Appliance.Builder<Builder> 
+	{
 		private String grade;
 		private int batteryVotage;
 		
@@ -40,6 +44,16 @@ public class Vaccum extends Appliance{
 			this.batteryVotage = batteryVotage;
 			return self();
 		}
+	}
+	
+	public boolean matchesCriteria(Map<String, Object> criteria) {
+		if (criteria.containsKey("batteryVotage")) {
+            int votage = (int) criteria.get("batteryVotage");
+            if (this.batteryVotage != votage) {
+                return false;
+            }
+        }
+		return true;
 	}
 	
 	@Override

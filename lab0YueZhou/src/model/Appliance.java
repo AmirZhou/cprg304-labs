@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Map;
+
 public abstract class Appliance {
 	private final String itemNumber;
 	private final String brand;
@@ -8,8 +10,7 @@ public abstract class Appliance {
 	private double price;
 	private int quantity;
 	
-	protected Appliance(Builder<?> builder)
-	{
+	protected Appliance(Builder<?> builder) {
 		this.itemNumber = builder.itemNumber;
 		this.brand = builder.brand;
 		this.wattage = builder.wattage;
@@ -18,8 +19,7 @@ public abstract class Appliance {
 		this.quantity = builder.quantity;
 	}
 	
- 	public abstract static class Builder<T extends Builder<T>> 
-	{
+ 	public abstract static class Builder<T extends Builder<T>> {
 		private String itemNumber;
         private String brand;
         private int wattage;
@@ -30,75 +30,65 @@ public abstract class Appliance {
         public abstract Appliance build();
         
         @SuppressWarnings("unchecked")
-        protected T self()
-        {
+        protected T self() {
         	return (T) this;
         }
         
-        public T itemNumber(String itemNumber) 
-        {
+        public T itemNumber(String itemNumber) {
             this.itemNumber = itemNumber;
             return self();
         }
         
-        public T brand(String brand)
-        {
+        public T brand(String brand) {
         	this.brand = brand;
         	return self();
         }
         
-        public T wattage(int wattage)
-        {
+        public T wattage(int wattage) {
         	this.wattage = wattage;
         	return self();
         }
         
-        public T color(String color)
-        {
+        public T color(String color) {
         	this.color = color;
         	return self();
         }
         
-        public T quantity(int quantity) 
-        {
+        public T quantity(int quantity) {
             this.quantity = quantity;
             return self();
         }
 
-        public T price(double price) 
-        {
+        public T price(double price) {
             this.price = price;
             return self();
         }
 	}
+ 	
+ 	public void checkOut() {
+		if (this.quantity >= 1) {			
+			this.quantity -= 1;
+		}
+    }
 	
-	public String itemNumber()
-	{
+	public String itemNumber() {
 		return itemNumber;
 	}
 	
-	public String brand()
-	{
+	public String brand() {
 		return brand;
 	}
 	
 	
-	public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-	
-	public int quantity()
-	{
+	public int quantity() {
 		return quantity;
 	}
 	
-	public int wattage()
-	{
+	public int wattage() {
 		return wattage;
 	}
 	
-	public String color()
-	{
+	public String color() {
 		return color;
 	}
 	
@@ -106,10 +96,12 @@ public abstract class Appliance {
         this.price = price;
     }
 	
-	public double price()
-	{
+	public double price() {
 		return price;
 	}
 	
+	public abstract boolean matchesCriteria(Map<String, Object> criteria);
+	
+	@Override
 	public abstract String toString();
 }

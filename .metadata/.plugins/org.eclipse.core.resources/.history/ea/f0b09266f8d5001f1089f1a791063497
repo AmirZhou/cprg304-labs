@@ -1,0 +1,26 @@
+package service;
+
+import model.Appliance;
+
+public class ApplianceService {
+	private final FileHandler fileHandler;
+	private final Appliance[] appliances = null;
+	
+	public ApplianceService(FileHandler fileHandler) {
+		this.fileHandler = fileHandler;
+	}
+	
+	public bool loadAppliance() {
+		
+	}
+	
+	public Appliance checkOut(String itemNumber) {
+		
+	}
+	
+	public Appliance[] findByBrand(String brand) {
+		
+	}
+	
+	
+}
