@@ -1,0 +1,66 @@
+package service;
+
+import model.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+
+public class ApplianceService {
+	private final FileHandler fileHandler;
+	private final List<Appliance> appliances = null;
+	
+	public ApplianceService(FileHandler fileHandler) {
+		this.fileHandler = fileHandler;
+	}
+	
+	public bool loadAppliance() {
+		
+	}
+	
+//	I don't want to manually call the loadAppliance myself, i prefer it done on service creation
+	
+	public Appliance checkOut(String itemNumber) {
+		
+	}
+	
+	
+	public List<Appliance> findByBrand(String brand) {
+		List<Appliance> matchingAppliances = new ArrayList<>();
+		
+		for (Appliance appliance : appliances) {
+			if(appliance.brand() == brand) {
+				matchingAppliances.add(appliance);
+			}
+		}
+		
+		return matchingAppliances;
+	}
+	
+	public List<Appliance> findByType(int type, Map<String, Object> criteria) {
+		List<Appliance> result = new ArrayList<>();
+		for (Appliance appliance: appliances) {
+			if (applianceTypeMatches(type, appliance) && appliance.matchesCriteria(criteria)) {
+				result.add(appliance);
+			}
+		}
+		return result;
+	}
+	
+	private boolean applianceTypeMatches(int type, Appliance appliance) {
+		return switch (type) {
+			case 1 -> appliance instanceof Refrigerator;
+			case 2 -> appliance instanceof Vaccum;
+			case 3 -> appliance instanceof Mircrowave;
+			case 4 -> appliance instanceof Dishwasher;
+		};
+	}
+	
+	public List<Appliance> getRandom(int count) {
+		
+	}
+	
+	public bool saveToFile() {
+		
+	}
+}

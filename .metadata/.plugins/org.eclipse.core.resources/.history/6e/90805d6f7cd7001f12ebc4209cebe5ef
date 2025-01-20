@@ -1,0 +1,64 @@
+package model;
+
+import java.util.Map;
+
+public class Vacuum extends Appliance
+{
+	private final String grade;
+	public String grade()
+	{
+		return this.grade;
+	}
+	
+	private final int batteryVotage;
+	public int batteryVotage()
+	{
+		return this.batteryVotage;
+	}
+	
+	private Vacuum(Builder builder)
+	{
+		super(builder);
+		this.grade = builder.grade;
+		this.batteryVotage = builder.batteryVotage;
+	}
+	
+	public static class Builder extends Appliance.Builder<Builder> 
+	{
+		private String grade;
+		private int batteryVotage;
+		
+		public Vacuum build()
+		{
+			return new Vacuum(this);
+		}
+		
+		public Builder grade(String grade)
+		{
+			this.grade = grade;
+			return self();
+		}
+		
+		public Builder batteryVotage(int batteryVotage)
+		{
+			this.batteryVotage = batteryVotage;
+			return self();
+		}
+	}
+	
+	public boolean matchesCriteria(Map<String, Object> criteria) {
+		if (criteria.containsKey("batteryVotage")) {
+            int votage = (int) criteria.get("batteryVotage");
+            if (this.batteryVotage != votage) {
+                return false;
+            }
+        }
+		return true;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "text";
+	}
+}

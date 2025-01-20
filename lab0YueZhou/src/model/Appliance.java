@@ -84,6 +84,10 @@ public abstract class Appliance {
 		return quantity;
 	}
 	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
 	public int wattage() {
 		return wattage;
 	}

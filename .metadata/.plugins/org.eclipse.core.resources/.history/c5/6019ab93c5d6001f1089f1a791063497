@@ -1,0 +1,6 @@
+package command;
+
+
+public class FinkByCriteriaCommand implements Command{
+	
+}

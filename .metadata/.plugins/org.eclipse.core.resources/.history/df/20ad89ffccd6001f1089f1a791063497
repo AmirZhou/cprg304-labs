@@ -1,0 +1,8 @@
+package ui;
+
+public class ConsoleUi implements Ui {
+	@Override
+	public void displayMessage(String message) {
+		
+	}
+}

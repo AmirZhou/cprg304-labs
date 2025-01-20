@@ -15,7 +15,7 @@ public class CheckOutCommand implements Command {
 	
 	@Override
 	public void execute() {
-		String itemNumber = ui.promptForItemNumber();	
+		String itemNumber = ui.getUserInput();	
 		Appliance appliance = applianceService.checkOut(itemNumber);
 		
 	}

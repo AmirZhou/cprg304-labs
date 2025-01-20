@@ -1,0 +1,8 @@
+package ui;
+
+
+public interface Ui {
+	public void displayMessage(String message);
+	public int getUserOption();
+	public String getUserInput();
+}
