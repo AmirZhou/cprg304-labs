@@ -69,8 +69,9 @@ public class DisplayByTypeCommand implements Command{
         if (matchingAppliances.isEmpty()) {
         	ui.displayMessage("Nope");
         } else {
+        	
         	ui.displayMessage("here you go:");
-        	ui.displayAppliances(matchingAppliances);
+        	
         }
 	}
 }

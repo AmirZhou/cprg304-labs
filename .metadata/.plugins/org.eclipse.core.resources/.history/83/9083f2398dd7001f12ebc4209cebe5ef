@@ -1,0 +1,15 @@
+package ui;
+
+public class ConsoleUi implements Ui {
+	@Override
+	public void displayMessage(String message) {
+		
+	}
+	
+	@Override
+	public int getUserOption() {
+		return 1;
+	}
+	
+	
+}

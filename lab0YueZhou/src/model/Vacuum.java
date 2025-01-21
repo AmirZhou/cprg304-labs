@@ -57,8 +57,22 @@ public class Vacuum extends Appliance
 	}
 	
 	@Override
-	public String toString()
-	{
-		return "text";
-	}
+    public String toString() {
+        return super.toString() +
+               "\nGrade: " + grade +
+               "\nBattery Voltage: " + batteryVoltage + "V";
+    }
+	
+	@Override
+    public String toFileFormat() {
+        return String.join(";",
+                itemNumber(),
+                brand(),
+                String.valueOf(quantity()),
+                String.valueOf(wattage()),
+                color(),
+                String.valueOf(price()),
+                grade,
+                String.valueOf(batteryVoltage));
+    }
 }

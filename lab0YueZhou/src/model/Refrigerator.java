@@ -67,18 +67,25 @@ public class Refrigerator extends Appliance {
 		return true;
 	}
 	
-    @Override
+	@Override
     public String toString() {
-        return "Refrigerator{" +
-                "numberOfDoors=" + numberOfDoors +
-                ", height=" + height +
-                ", width=" + width +
-                ", itemNumber='" + itemNumber() + '\'' +
-                ", brand='" + brand() + '\'' +
-                ", quantity=" + quantity() +
-                ", wattage=" + wattage() +
-                ", color='" + color() + '\'' +
-                ", price=" + price() +
-                '}';
+        return super.toString() +
+               "\nNumber of Doors: " + numberOfDoors +
+               "\nHeight: " + height +
+               "\nWidth: " + width;
+    }
+	
+	@Override
+    public String toFileFormat() {
+        return String.join(";", 
+                itemNumber(), 
+                brand(), 
+                String.valueOf(quantity()), 
+                String.valueOf(wattage()), 
+                color(), 
+                String.valueOf(price()), 
+                String.valueOf(numberOfDoors), 
+                String.valueOf(height), 
+                String.valueOf(width));
     }
 }

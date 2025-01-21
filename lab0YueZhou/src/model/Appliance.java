@@ -107,5 +107,14 @@ public abstract class Appliance {
 	public abstract boolean matchesCriteria(Map<String, Object> criteria);
 	
 	@Override
-	public abstract String toString();
+    public String toString() {
+        return "Item Number: " + itemNumber +
+               "\nBrand: " + brand +
+               "\nQuantity: " + quantity +
+               "\nWattage: " + wattage +
+               "\nColor: " + color +
+               "\nPrice: " + price;
+    }
+	
+	public abstract String toFileFormat();
 }

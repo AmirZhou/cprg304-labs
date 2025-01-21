@@ -59,9 +59,22 @@ public class Dishwasher extends Appliance
 	}
 	
 	@Override
-	public String toString()
-	{
-		return "test";
-	}
+    public String toString() {
+        return super.toString() +
+               "\nFeature: " + feature +
+               "\nSound Rating: " + soundRating;
+    }
 	
+	@Override
+    public String toFileFormat() {
+        return String.join(";",
+                itemNumber(),
+                brand(),
+                String.valueOf(quantity()),
+                String.valueOf(wattage()),
+                color(),
+                String.valueOf(price()),
+                feature,
+                soundRating);
+    }
 }

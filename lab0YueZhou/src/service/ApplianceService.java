@@ -14,9 +14,9 @@ public class ApplianceService {
 	private final ApplianceParser parser;
 	private final List<Appliance> appliances;
 	
-	public ApplianceService(FileHandler fileHandler) {
+	public ApplianceService(FileHandler fileHandler, ApplianceParser parser) {
 		this.fileHandler = fileHandler;
-		this.parser = new ApplianceParser();
+		this.parser = parser;
 		this.appliances = new ArrayList<>();
 		
 		try {
@@ -90,8 +90,9 @@ public class ApplianceService {
 	public boolean saveToFile() {
 		List<String> applianceStrings = new ArrayList<>();
 		for (Appliance appliance: appliances) {
-			applianceStrings.add(appliance.toString());
+			applianceStrings.add(appliance.toFileFormat());
 		}
+		
 		try {
 			fileHandler.storeStrings(applianceStrings);
 			return true;
@@ -100,4 +101,5 @@ public class ApplianceService {
             return false;
 		}
 	}
+	
 }

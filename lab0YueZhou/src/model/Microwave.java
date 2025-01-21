@@ -58,9 +58,23 @@ public class Microwave extends Appliance
 	}
 	
 	@Override
-	public String toString()
-	{
-		return "test";
-	}
+    public String toString() {
+        return super.toString() +
+               "\nCapacity: " + capacity +
+               "\nRoom Type: " + (roomType.equalsIgnoreCase("K") ? "Kitchen" : "Worksite");
+    }
+	
+	@Override
+    public String toFileFormat() {
+        return String.join(";",
+                itemNumber(),
+                brand(),
+                String.valueOf(quantity()),
+                String.valueOf(wattage()),
+                color(),
+                String.valueOf(price()),
+                String.valueOf(capacity),
+                roomType);
+    }
 	
 }
