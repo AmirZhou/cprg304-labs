@@ -57,9 +57,9 @@ public class DisplayByTypeCommand implements Command{
         	}
         	
         	default -> {
-                ui.displayMessage("Invalid option. Please choose a valid type.");
-                return;
-            }
+        		ui.displayMessage("Invalid option.");
+        		return;
+        	}
         }
         
         // 3. Search for appliances
@@ -67,13 +67,10 @@ public class DisplayByTypeCommand implements Command{
         
         // 4. Display
         if (matchingAppliances.isEmpty()) {
-        	ui.displayMessage("No appliances found matching the criteria.");
+        	ui.displayMessage("Nope");
         } else {
         	
-        	ui.displayMessage("Matching Appliances:");
-            for (Appliance appliance : matchingAppliances) {
-                ui.displayMessage(appliance.toString() + '\n');
-            }
+        	ui.displayMessage("here you go:");
         	
         }
 	}

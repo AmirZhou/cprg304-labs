@@ -27,7 +27,7 @@ public class FindByBrandCommand implements Command {
         } else {
             ui.displayMessage("Matching Appliances:");
             for (Appliance appliance : matchingAppliances) {
-                ui.displayMessage(appliance.toString() + '\n');
+                ui.displayMessage(appliance.toString());
             }
         }
 	}

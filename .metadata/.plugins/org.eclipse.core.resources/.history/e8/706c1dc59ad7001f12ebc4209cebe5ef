@@ -37,20 +37,21 @@ public class ApplianceService {
 //	I don't want to manually call the loadAppliance myself, i prefer it done on service creation
 	
 	public Appliance checkOut(String itemNumber) {
-	    for (Appliance appliance : appliances) {
-	        if (appliance.itemNumber().equals(itemNumber)) {
-	            return appliance; // Return the actual reference
-	        }
-	    }
-	    return null; // Return null if not found
-	}
+        for (Appliance appliance : appliances) {
+            if (appliance.itemNumber().equals(itemNumber)) {
+                appliance.setQuantity(appliance.quantity() - 1);
+                return appliance;
+            }
+        }
+        return null;
+    }
 	
 	
 	public List<Appliance> findByBrand(String brand) {
 		List<Appliance> results = new ArrayList<>();
 		
 		for (Appliance appliance : appliances) {
-			if(appliance.brand().equalsIgnoreCase(brand)) {
+			if(appliance.brand() == brand) {
 				results.add(appliance);
 			}
 		}

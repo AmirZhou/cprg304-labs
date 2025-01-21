@@ -72,7 +72,7 @@ public class DisplayByTypeCommand implements Command{
         	
         	ui.displayMessage("Matching Appliances:");
             for (Appliance appliance : matchingAppliances) {
-                ui.displayMessage(appliance.toString() + '\n');
+                ui.displayMessage(appliance.toString());
             }
         	
         }

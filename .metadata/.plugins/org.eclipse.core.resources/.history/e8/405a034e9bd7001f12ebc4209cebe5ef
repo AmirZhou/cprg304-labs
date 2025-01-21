@@ -30,6 +30,7 @@ public class CheckOutCommand implements Command {
             // Case 3: Successful check-out
             appliance.setQuantity(appliance.quantity() - 1);
             ui.displayMessage("Appliance \"" + itemNumber + "\" has been checked out.");
+            ui.displayMessage(appliance.toString());
         }
 	}
 }

@@ -51,7 +51,7 @@ public class Dishwasher extends Appliance
     public boolean matchesCriteria(Map<String, Object> criteria) {
 		if (criteria.containsKey("soundRating")) {
             String soundRating = (String) criteria.get("soundRating");
-            if (!this.soundRating.equalsIgnoreCase(soundRating)) {
+            if (this.soundRating.equalsIgnoreCase(soundRating)) {
                 return false;
             }
         }

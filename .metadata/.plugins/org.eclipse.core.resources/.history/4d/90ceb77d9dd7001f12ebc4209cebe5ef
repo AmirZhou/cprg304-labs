@@ -50,7 +50,7 @@ public class Microwave extends Appliance
     public boolean matchesCriteria(Map<String, Object> criteria) {
 		if (criteria.containsKey("roomType")) {
             String roomType = (String) criteria.get("roomType");
-            if (!this.roomType.equalsIgnoreCase(roomType)) {
+            if (this.roomType != roomType) {
                 return false;
             }
         }
