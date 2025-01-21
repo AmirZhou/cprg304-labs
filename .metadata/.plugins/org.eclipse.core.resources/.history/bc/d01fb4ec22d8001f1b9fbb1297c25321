@@ -22,17 +22,11 @@ public class RandomApplianceCommand implements Command {
 
         try {
             List<Appliance> randomAppliances = applianceService.getRandom(count);
-            
-            if (randomAppliances.isEmpty()) {
-                ui.displayMessage("No appliances available.");
-                return;
-            }
-            
+
             ui.displayMessage("Random Appliances:");
             for (Appliance appliance : randomAppliances) {
-                ui.displayMessage(appliance.toString() + '\n');
+                ui.displayMessage(appliance.toString());
             }
-            
         } catch (IllegalArgumentException e) {
             ui.displayMessage("Invalid count. Please try again.");
         }

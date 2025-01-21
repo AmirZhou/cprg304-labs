@@ -25,11 +25,11 @@ public class CheckOutCommand implements Command {
             ui.displayMessage("No appliances found with the item number: " + itemNumber + '\n');
         } else if (appliance.quantity() == 0) {
             // Case 2: Appliance is out of stock
-            ui.displayMessage("The appliance is not available to be checked out.\n");
+            ui.displayMessage("The appliance is not available to be checked out.");
         } else {
             // Case 3: Successful check-out
             appliance.setQuantity(appliance.quantity() - 1);
-            ui.displayMessage("Appliance \"" + itemNumber + "\" has been checked out.\n");
+            ui.displayMessage("Appliance \"" + itemNumber + "\" has been checked out.");
         }
 	}
 }
