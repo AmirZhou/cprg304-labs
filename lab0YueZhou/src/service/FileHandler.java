@@ -10,6 +10,21 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
+/**
+ * Handles file operations, including reading, writing, and ensuring directory creation.
+ * 
+ * Author: Yue Zhou (Amir)
+ * 
+ * Functionality:
+ * - Read strings from a file.
+ * - Write strings to a file.
+ * - Copy a resource from the JAR to a writable location.
+ * - Ensure the parent directory for the file exists.
+ * 
+ * Injected Dependencies:
+ * - Path (file location).
+ */
+
 public class FileHandler {
 	private final Path filePath;
 	

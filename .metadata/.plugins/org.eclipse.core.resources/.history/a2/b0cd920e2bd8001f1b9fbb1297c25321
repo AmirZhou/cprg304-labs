@@ -1,0 +1,24 @@
+package ui;
+
+/**
+ * Ui Interface
+ * 
+ * Provides methods for user interaction, including displaying messages, menus,
+ * and receiving user inputs.
+ * 
+ * Author: Yue Zhou (Amir)
+ * 
+ * Functionality:
+ * - Display general messages and menus to the user.
+ * - Receive numeric and text inputs from the user.
+ * 
+ * Implementing Class:
+ * - ConsoleUi: Implementation for console-based user interaction.
+ */
+
+public interface Ui {
+	public void displayMessage(String message);
+	public void displayMenu();
+	public int getUserOption();
+	public String getUserInput();
+}

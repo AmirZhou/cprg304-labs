@@ -8,6 +8,24 @@ import model.Appliance;
 import ui.*;
 import service.ApplianceService;
 
+/**
+* Command to display appliances filtered by type and additional criteria.
+* 
+* Author: Yue Zhou (Amir)
+* 
+* Injected Dependencies:
+* - Ui: Interface for interacting with the user (e.g., console-based input/output).
+* - ApplianceService: Service layer handling appliance data operations.
+* 
+* Implements:
+* - Command
+* 
+* Functionality:
+* - Prompts the user to select an appliance type.
+* - Collects additional filtering criteria based on the selected type.
+* - Displays a list of appliances matching the selected type and criteria.
+*/
+
 public class DisplayByTypeCommand implements Command{
 	private final Ui ui;
 	private final ApplianceService applianceService;

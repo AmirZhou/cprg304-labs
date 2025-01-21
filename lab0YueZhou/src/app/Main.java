@@ -3,25 +3,30 @@ package app;
 import service.*;
 import ui.*;
 
+
 /**
- * App Class
+ * Main Class
  * 
  * Author: Yue Zhou (Amir)
  * 
  * Description:
- * Serves as the main controller of the application, managing user interactions
- * and delegating tasks to appropriate commands based on user input.
+ * Entry point of the Modern Appliances application. Sets up the dependencies,
+ * initializes services, and starts the application.
  * 
  * Injected Dependencies:
- * - `Ui`: Interface for user interaction.
- * - `ApplianceService`: Handles appliance-related operations.
+ * - `Ui`: Console-based user interface for interactions.
+ * - `FileHandler`: Reads and writes appliance data to/from the filesystem.
+ * - `ApplianceService`: Core logic for managing appliances.
+ * - `ApplianceParser`: Parses appliance data from text files.
  * 
  * Interfaces:
- * - Utilizes the `Command` interface for handling user actions.
+ * - `Ui`: Provides a contract for user interaction.
+ * - `FileHandler`: Manages file operations.
  * 
  * Key Responsibilities:
- * - Map menu options to command implementations.
- * - Manage the application lifecycle through a run loop.
+ * - Establish resources and services required by the application.
+ * - Initialize the `App` class with its dependencies.
+ * - Handle runtime errors and ensure a graceful application lifecycle.
  */
 
 public class Main {

@@ -8,6 +8,22 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Manages appliances, including loading, searching, and persisting data.
+ * 
+ * Author: Yue Zhou (Amir)
+ * 
+ * Functionality:
+ * - Load appliances from a file.
+ * - Search appliances by brand or criteria.
+ * - Retrieve random appliances.
+ * - Save appliances back to the file.
+ * 
+ * Injected Dependencies:
+ * - FileHandler (for file operations).
+ * - ApplianceParser (to parse appliance data).
+ */
+
 
 public class ApplianceService {
 	private final FileHandler fileHandler;
@@ -26,6 +42,7 @@ public class ApplianceService {
         }
 	}
 	
+	// Loads appliances from the file
 	public boolean loadAppliance() throws IOException {
 		List<String> lines = fileHandler.getStrings();
 		List<Appliance> parsedAppliances = parser.parseAppliance(lines);
@@ -34,8 +51,7 @@ public class ApplianceService {
 		return true;
 	}
 	
-//	I don't want to manually call the loadAppliance myself, i prefer it done on service creation
-	
+	// Retrieves an appliance by item number
 	public Appliance checkOut(String itemNumber) {
 	    for (Appliance appliance : appliances) {
 	        if (appliance.itemNumber().equals(itemNumber)) {
@@ -45,7 +61,7 @@ public class ApplianceService {
 	    return null; // Return null if not found
 	}
 	
-	
+	// Searches appliances by brand
 	public List<Appliance> findByBrand(String brand) {
 		List<Appliance> results = new ArrayList<>();
 		
@@ -57,6 +73,7 @@ public class ApplianceService {
 		return results;
 	}
 	
+	// Searches appliances by type and criteria
 	public List<Appliance> findByType(int type, Map<String, Object> criteria) {
 		List<Appliance> result = new ArrayList<>();
 		for (Appliance appliance: appliances) {
@@ -77,6 +94,7 @@ public class ApplianceService {
 		};
 	}
 	
+	// Retrieves random appliances
 	public List<Appliance> getRandom(int count) {
 		if (count <= 0 || count > appliances.size()) {
 			throw new IllegalArgumentException("Invalid Count: " + count);
@@ -86,6 +104,7 @@ public class ApplianceService {
 		return shuffled.subList(0, count);
 	}
 	
+	// Saves appliances back to the file
 	public boolean saveToFile() {
 		List<String> applianceStrings = new ArrayList<>();
 		for (Appliance appliance: appliances) {

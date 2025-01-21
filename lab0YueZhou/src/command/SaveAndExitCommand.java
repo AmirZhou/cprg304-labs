@@ -3,6 +3,24 @@ package command;
 import service.ApplianceService;
 import ui.Ui;
 
+/**
+ * Command to save appliance data to a file and exit the application.
+ * 
+ * Author: Yue Zhou (Amir)
+ * 
+ * Injected Dependencies:
+ * - Ui: Interface for user interaction (e.g., displaying messages to the user).
+ * - ApplianceService: Service layer for managing appliance data, including file operations.
+ * 
+ * Implements:
+ * - Command
+ * 
+ * Functionality:
+ * - Saves the current appliance data to a file.
+ * - Notifies the user of the success or failure of the save operation.
+ * - Exits the application gracefully after saving.
+ */
+
 public class SaveAndExitCommand implements Command {
     private final ApplianceService applianceService;
     private final Ui ui;

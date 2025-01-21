@@ -7,6 +7,28 @@ import ui.*;
 import command.*;
 import service.*;
 
+/**
+ * App Class
+ * 
+ * Author: Yue Zhou (Amir)
+ * 
+ * Description:
+ * Serves as the main controller of the application, managing user interactions
+ * and delegating tasks to appropriate commands based on user input.
+ * 
+ * Injected Dependencies:
+ * - `Ui`: Interface for user interaction.
+ * - `ApplianceService`: Handles appliance-related operations.
+ * 
+ * Interfaces:
+ * - Utilizes the `Command` interface for handling user actions.
+ * 
+ * Key Responsibilities:
+ * - Map menu options to command implementations.
+ * - Manage the application lifecycle through a run loop.
+ */
+
+
 public class App {
 	private final Ui ui;
 	private final Map<Integer, Command> commands = new HashMap<>();
