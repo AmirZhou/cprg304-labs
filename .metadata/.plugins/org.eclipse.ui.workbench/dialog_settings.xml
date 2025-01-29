@@ -41,9 +41,10 @@
 	<section name="ImportExportAction">
 		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.jdt.internal.ui.fatjarpackager.JarPackageWizard"/>
 		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
-			<item value="org.eclipse.jst.ejb.ui"/>
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.equinox.p2.category"/>
 			<item value="org.eclipse.jdt.ui.Java"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.debug.ui"/>
 		</list>
 		<section name="ImportExportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="468"/>
@@ -54,11 +55,31 @@
 		</section>
 	</section>
 	<section name="FileSystemExportWizard">
+		<item key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_RESOLVE_LINKED_RESOURCES_ID" value="false"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\AmirYueZhou\Desktop"/>
+		</list>
 		<section name="FileSystemExportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="468"/>
 			<item key="DIALOG_Y_ORIGIN" value="132"/>
 			<item key="DIALOG_WIDTH" value="710"/>
-			<item key="DIALOG_HEIGHT" value="594"/>
+			<item key="DIALOG_HEIGHT" value="604"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\AmirYueZhou\Desktop\Lab0-YueZhou.zip"/>
+		</list>
+		<section name="ZipFileExportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="468"/>
+			<item key="DIALOG_Y_ORIGIN" value="132"/>
+			<item key="DIALOG_WIDTH" value="710"/>
+			<item key="DIALOG_HEIGHT" value="604"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>

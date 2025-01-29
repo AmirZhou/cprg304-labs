@@ -70,17 +70,19 @@
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_SAVE" value="false"/>
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\AmirYueZhou\eclipse-workspace"/>
 		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="1"/>
-		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Welcome - demo"/>
-		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\AmirYueZhou\Desktop\oop304\welcome.jar"/>
+		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Main - lab0YueZhou"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\AmirYueZhou\Desktop\Lab0-YueZhou.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\AmirYueZhou\Desktop\Lab0-YueZhou.jar"/>
 			<item value="C:\Users\AmirYueZhou\Desktop\oop304\welcome.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="C:\Users\AmirYueZhou\eclipse-workspace.xml"/>
 			<item value=".xml"/>
 		</list>
 		<section name="FatJarPackageWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="325"/>
-			<item key="DIALOG_Y_ORIGIN" value="56"/>
+			<item key="DIALOG_X_ORIGIN" value="468"/>
+			<item key="DIALOG_Y_ORIGIN" value="132"/>
 			<item key="DIALOG_WIDTH" value="613"/>
 			<item key="DIALOG_HEIGHT" value="550"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

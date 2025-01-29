@@ -28,7 +28,6 @@ import service.*;
  * - Manage the application lifecycle through a run loop.
  */
 
-
 public class App {
 	private final Ui ui;
 	private final Map<Integer, Command> commands = new HashMap<>();
