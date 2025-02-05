@@ -32,7 +32,7 @@ public class Driver {
 			if (index == -1) {
 				System.out.println(userInput + " doesn't exist in the list");
 			} else {				
-				System.out.println("the result's index int the list is " + index);
+				System.out.println("the result's index in the list is " + index);
 			}
 			
 		} catch (InputMismatchException ex) {
