@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 // should I make this class generic or should I make the static method generic?
 // should I even consider generic? what benefits I got by doing so.
-// If I were to implement a number of sorting algorithms, do I need to implement any interface
+// If I were to implement a number of sorting algorithms, do I need to implement any interface?
 public class SelectionSort implements SortingAlgorithm {
 	
 	@Override()
@@ -14,15 +14,10 @@ public class SelectionSort implements SortingAlgorithm {
 			// - Or use ArraryLits Constructor.
 		ArrayList<E> result = new ArrayList<E>(input);
 		
-		
+		// i should move the size() call out for the for loop
 		for (int i = 0; i < result.size() ; i++) {
 			
-			// the following process should be looped, 
-			// it should based on the current first index,
-			// it should end when the current first index reach (size - 1)
-			
-			// find the largest index
-			int largestIndex = findFirstLargestIndex(result);
+			int largestIndex = findIndexOfMaxFrom(result, i);
 			// swap it with the current first index. start with 0
 			swap(result, i, largestIndex);
 		}
@@ -30,19 +25,18 @@ public class SelectionSort implements SortingAlgorithm {
 		return result;
 	}
 	
-	
 	private <E> void swap(List<E> input, int a, int b) {
-		// how do I get rid of this temp after I'm done with it? Will I save some space?
 		E temp = input.get(b);
+		
 		input.set(b, input.get(a));
 		input.set(a, temp);
 	}
 	
-	private <E extends Comparable<? super E>> int findFirstLargestIndex(List<E> input) {
-		// how to get an items index?
-		int index = 0;
-		E largest = input.get(0);
-		for (int i = 1; i < input.size() - 1; i++) {
+	private <E extends Comparable<? super E>> int findIndexOfMaxFrom(List<E> input, int startingIndex) {
+		int index = startingIndex;
+		
+		E largest = input.get(startingIndex);
+		for (int i = index; i < input.size() ; i++) {
 			if (input.get(i).compareTo(largest) > 0) {
 				index = i;
 				largest = input.get(i);
