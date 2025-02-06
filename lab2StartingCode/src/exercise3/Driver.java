@@ -1,14 +1,18 @@
 package exercise3;
 
 import java.util.Random;
-import java.util.List;
-import java.util.Arrays;
+import java.util.Scanner;
+
+import exercise3.IntArrayAlgorithms.*;
+import exercise3.command.*;
 
 public class Driver
 {
 
 	public static final int SIZE = 100;
 	public static final int UPPER_BOUND = 1000;
+	private static final Scanner scanner = new Scanner(System.in);
+	private static Approach approach;
 
 	public static void main( String[] args )
 	{
@@ -24,18 +28,29 @@ public class Driver
 		
 		// My code starts here
 		
+		System.out.println("Select a sorting method");
+		System.out.println("1: Selection Sort \n");
+		System.out.println("2: Insertion Sort \n");
+		
+		int userOption = Integer.parseInt(scanner.nextLine().trim());
+		
+		switch (userOption) {
+			case 1:
+				approach = Approach.SelectionSort;
+			case 2:
+				approach = Approach.InsertionSort;
+			default :
+				approach = Approach.SelectionSort;
+		}
+		
+		Command command = new SortDescCommand(nums, approach);
+		command.execute();
+		
 		System.out.println("Here's the result");
-		
-		List<Integer> result = sortDescendent(Arrays.asList(nums));
-		
-		for (int e: result) {
+		for(int e : nums) {
 			System.out.println(e);
 		}
 	}
 	
-	private static <E extends Comparable<? super E>> List<E> sortDescendent(List<E> input) {
-		// Is there any problem this static method create an instance?
-		SortingAlgorithm sorter = new SelectionSort();
-		return sorter.sortDescending(input);
-	}
+
 }

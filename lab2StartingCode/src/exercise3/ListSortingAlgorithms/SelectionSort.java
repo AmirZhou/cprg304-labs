@@ -1,4 +1,4 @@
-package exercise3;
+package exercise3.ListSortingAlgorithms;
 import java.util.List;
 import java.util.ArrayList;
 // should I make this class generic or should I make the static method generic?
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 // If I were to implement a number of sorting algorithms, do I need to implement any interface?
 public class SelectionSort implements SortingAlgorithm {
 	
-	@Override()
+	@Override
 	public <E extends Comparable<? super E>> List<E> sortDescending(List<E> input) {
 		
 		// how do I duplicate the initial input? 
