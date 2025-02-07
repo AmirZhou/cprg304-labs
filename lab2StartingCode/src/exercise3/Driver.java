@@ -37,16 +37,18 @@ public class Driver
 		switch (userOption) {
 			case 1:
 				approach = Approach.SelectionSort;
+				break;
 			case 2:
 				approach = Approach.InsertionSort;
+				break;
 			default :
-				approach = Approach.SelectionSort;
+				approach = Approach.InsertionSort;
 		}
 		
 		Command command = new SortDescCommand(nums, approach);
 		command.execute();
 		
-		System.out.println("Here's the result");
+		System.out.println("Here's the result by " + approach.toString());
 		for(int e : nums) {
 			System.out.println(e);
 		}

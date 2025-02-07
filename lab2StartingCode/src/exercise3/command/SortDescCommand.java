@@ -22,7 +22,10 @@ public class SortDescCommand implements Command {
 			case Approach.InsertionSort:
 				this.sorter = new IntArrayInsertionSort();
 				break;
-				
+			
+			case Approach.BubbleSort:
+				this.sorter = new IntArrBubbleSort();
+				break;
 			default :
 				this.sorter = null;
 		}
