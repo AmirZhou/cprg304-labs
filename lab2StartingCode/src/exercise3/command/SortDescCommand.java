@@ -26,6 +26,11 @@ public class SortDescCommand implements Command {
 			case Approach.BubbleSort:
 				this.sorter = new IntArrBubbleSort();
 				break;
+				
+			case Approach.QuickSort:
+				this.sorter = new IntArrQuickSort();
+				break;
+				
 			default :
 				this.sorter = null;
 		}

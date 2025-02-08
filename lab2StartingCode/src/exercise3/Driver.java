@@ -29,8 +29,10 @@ public class Driver
 		// My code starts here
 		
 		System.out.println("Select a sorting method");
-		System.out.println("1: Selection Sort \n");
-		System.out.println("2: Insertion Sort \n");
+		System.out.println("1: Selection Sort");
+		System.out.println("2: Insertion Sort");
+		System.out.println("3: Bubble Sort");
+		System.out.println("4: Quick Sort");
 		
 		int userOption = Integer.parseInt(scanner.nextLine().trim());
 		
@@ -41,6 +43,12 @@ public class Driver
 			case 2:
 				approach = Approach.InsertionSort;
 				break;
+			case 3:
+				approach = Approach.BubbleSort;
+				break;
+			case 4:
+				approach = Approach.QuickSort;
+				break;
 			default :
 				approach = Approach.InsertionSort;
 		}
@@ -48,7 +56,7 @@ public class Driver
 		Command command = new SortDescCommand(nums, approach);
 		command.execute();
 		
-		System.out.println("Here's the result by " + approach.toString());
+		System.out.println("Here's the result of " + approach.toString());
 		for(int e : nums) {
 			System.out.println(e);
 		}

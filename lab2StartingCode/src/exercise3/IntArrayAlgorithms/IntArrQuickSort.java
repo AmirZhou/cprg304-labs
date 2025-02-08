@@ -5,37 +5,55 @@ public class IntArrQuickSort implements IntArrSortingAlgorithm{
 	@Override
 	public Integer[] sortDescending(Integer[] arr) {
 		Integer[] result = arr.clone();
-		
-		// a pivot point, to the left all greater than the pivot, to the right everything less than the pivot
-		
-		// QA1: How did you find the first pivot point?
-		// 		Does this involve find the min or max?
-		//     
-		
+		quickSort(result);
 		return result;
 	}
 	
-	private int findePivotIndex(int l, int r) {
-		return (l - r) / 2;
+	public void quickSort(Integer[] arr) {
+		quickSort(arr, 0, arr.length -1);
+	}
+	
+	public void quickSort(Integer[] arr, int l, int r) {
+		
+		if (r > l) {
+			int m = hoarePartition(arr, l, r);
+			quickSort(arr, l, m);
+			quickSort(arr, m + 1, r);
+		}
+		
 	}
 	
 	
-	private void quickSortInRange(Integer[] arr, int l, int r) {
+	private int hoarePartition(Integer[] arr, int l, int r) {
 		
-		// base case here
-		if (l == r) return;
+		int i = l;
+		int j = r;
 		
-		// do the calculation and give me back the pivot index.
-		int pivotIndex;
+		int pivot = arr[(r-l)/2 + l];
 		
-		// recursive apply the left part
-		if (pivotIndex != l) {
-			quickSortInRange(arr, l, pivotIndex -1);
-		}
+		while (true) {
+				
+			while (arr[i] > pivot) {
+				i ++;
+			}
+			
+			while (arr[j] < pivot) {
+				j --;
+			}
 		
-		// recursively apply to the right part
-		if (pivotIndex != r) {
-			quickSortInRange(arr, pivotIndex + 1, r);
+		// swap and i++ j--
+			if (j <= i) {
+				return j;
+			}
+			
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		
+			
+			i ++;
+			j --;
+			
 		}
 	}
 }
