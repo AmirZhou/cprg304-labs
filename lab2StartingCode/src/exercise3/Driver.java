@@ -11,7 +11,6 @@ public class Driver
 
 	public static final int SIZE = 100;
 	public static final int UPPER_BOUND = 1000;
-	private static final Scanner scanner = new Scanner(System.in);
 	private static Approach approach;
 
 	public static void main( String[] args )
@@ -28,34 +27,34 @@ public class Driver
 		
 		// My code starts here
 		
-		System.out.println("Select a sorting method");
-		System.out.println("1: Selection Sort");
-		System.out.println("2: Insertion Sort");
-		System.out.println("3: Bubble Sort");
-		System.out.println("4: Quick Sort");
+		// retrieve and parse the args.
 		
-		int userOption = Integer.parseInt(scanner.nextLine().trim());
-		
+		String userOption = args[0].toLowerCase().trim();
+
 		switch (userOption) {
-			case 1:
+			case "s":
 				approach = Approach.SelectionSort;
 				break;
-			case 2:
+			case "i":
 				approach = Approach.InsertionSort;
 				break;
-			case 3:
+			case "b":
 				approach = Approach.BubbleSort;
 				break;
-			case 4:
+			case "q":
 				approach = Approach.QuickSort;
 				break;
 			default :
 				approach = Approach.InsertionSort;
 		}
 		
+		// build the command based on the argument.
 		Command command = new SortDescCommand(nums, approach);
+		
+		// execute the command.
 		command.execute();
 		
+		// display the result.
 		System.out.println("Here's the result of " + approach.toString());
 		for(int e : nums) {
 			System.out.println(e);

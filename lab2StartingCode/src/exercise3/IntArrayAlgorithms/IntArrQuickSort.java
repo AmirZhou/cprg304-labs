@@ -20,7 +20,6 @@ public class IntArrQuickSort implements IntArrSortingAlgorithm{
 			quickSort(arr, l, m);
 			quickSort(arr, m + 1, r);
 		}
-		
 	}
 	
 	

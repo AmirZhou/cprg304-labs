@@ -3,8 +3,6 @@ package exercise3.command;
 /**
  * Command Interface
  * 
- * Author: Yue Zhou (Amir)
- * 
  * Description:
  * Defines a contract for executable actions in the application.
  * Each command implements the `execute` method to perform specific functionality.
