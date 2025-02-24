@@ -27,8 +27,7 @@ public class Driver
 		
 		// My code starts here
 		
-		// retrieve and parse the args.
-		
+		// retrieve and parse the arg into an sorting strategy
 		String userOption = args[0].toLowerCase().trim();
 
 		switch (userOption) {
@@ -48,7 +47,7 @@ public class Driver
 				approach = Approach.InsertionSort;
 		}
 		
-		// build the command based on the argument.
+		// build the command using the strategy and the target array.
 		Command command = new SortDescCommand(nums, approach);
 		
 		// execute the command.
