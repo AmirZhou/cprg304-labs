@@ -1,46 +1,87 @@
 package utilities;
 
+import exceptions.DuplicateKeyException;
+
 /**
 * DictionaryADT.java
 *
-* @author Yue (Amir) Zhou
-* @version 0.1
+* @author kitty
+* @version 1.1
 * 
 * Class Definition: This interface represents the public contract for the
-* implementation of Dictionary for the DictionaryADT Lab. 
+* implementation of Dictionary for the DictionaryADT Lab. This data type 
+* will store data in (key, value) pairs and keys must be unique. 
 */
+
 public interface DictionaryADT<K,V>
 {
 	/**
-	 * Returns {@code true} if this dictionary contains a mapping for the specific key.
-	 * @param key key whose presence in this map is to be tested
-	 * @return {@code true} if this map contains a mapping for the specified key
-	 * @throws ClassCastException if the key is of an inappropriate type for this map
+	 * Constructor method to create a new Dictionary object.
+	 * 
+	 * Precondition: None.
+	 * 
+	 * Postcondition: A dictionary object is created and its size is 
+	 * initialized to the value in the argument, or a default of 10.
+	 * 
+	 * @param size Optional: the size of the new dictionary, default is 10.
 	 */
-	boolean containsKey(K key);
-	
+	public void create( int size );
+
 	/**
-	 * Returns the value for the specific key-value pair if it exists.
-	 * @param key the specific key to look up in this dictionary
-	 * @return the corresponding value of the specific key, or {@code null} if the mapping didn't exist.
-	 * @throws ClassCastException if the key is of an inappropriate type for this map
+	 * Mutator method to insert a new key-value pair into the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and non-null values
+	 * are passed as arguments.
+	 * 
+	 * Postcondition: The new key-value pair is added to the Dictionary.
+	 * 
+	 * @param K key
+	 * @param V value
+	 * @return true if key-value pair has been added successfully.
+	 * 
+	 * @throws DuplicateKeyException is thrown if key already exist.
 	 */
-	V get(K key);
-	
+	public boolean insert( K key, V value ) throws DuplicateKeyException;
+
 	/**
-	 * Mapping the provided key with the provided value in the dictionary.
-	 * @param key key with which the specified value is to be associated
-	 * @param v value to be associated with the specified key
-	 * @return The previous value associated with the provided key, or null if there's no association with the key.
-	 * @throws ClassCastException if the key or value is of an inappropriate type for this map
+	 * Mutator method to remove a key-value pair from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The key-value pair is deleted from the Dictionary.
+	 * 
+	 * @param K key
+	 * @return the value of the key removed, null if key does not exist.
 	 */
-	V put(K key, V value);
-	
+	public V remove( K key );
+
 	/**
-	 * Remove an entry in the dictionary
-	 * @param key key whose mapping is to be removed from the map
-	 * @return the previous value associated with {@code key}, or {@code null} if there was no mapping for {@code key}.
-	 * @throws ClassCastException if the key is of an inappropriate type for this map
+	 * Mutator method to update a key-value pair from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The value of the key is changed in the Dictionary.
+	 * 
+	 * @param K key
+	 * @param V the new value
+	 * @return true if key-value pair has been changed successfully, or 
+	 * false if key does not exist.
 	 */
-	V remove(K key);
+	public boolean update( K key, V value );
+
+	/**
+	 * Accessor method to retrieve the value of a key from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The value of the key is returned from the Dictionary.
+	 * 
+	 * @param K key
+	 * @return the value of the key, null if key does not exist.
+	 */
+	public V lookup( K key );
+
 }
